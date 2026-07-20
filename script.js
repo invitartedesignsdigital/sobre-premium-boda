@@ -1,32 +1,29 @@
-const boton=document.getElementById("btnAbrir");
+const boton = document.getElementById("btnAbrir");
 
-const izquierda=document.getElementById("panelIzquierdo");
+const izquierda = document.getElementById("panelIzquierdo");
 
-const derecha=document.getElementById("panelDerecho");
+const derecha = document.getElementById("panelDerecho");
 
-const musica=document.getElementById("musica");
-
-
-boton.addEventListener("click",()=>{
+const musica = document.getElementById("musica");
 
 
-musica.play();
+boton.addEventListener("click", () => {
+
+    musica.play();
+
+    izquierda.style.transform = "translateX(-100%)";
+
+    derecha.style.transform = "translateX(100%)";
+
+    boton.style.opacity = "0";
 
 
-izquierda.style.transform="translateX(-100%)";
+    setTimeout(() => {
 
-derecha.style.transform="translateX(100%)";
+        document.getElementById("overlay").style.display = "none";
 
-boton.style.opacity="0";
+        window.location.href = "https://www.invitartedesigns.com/save-the-date-jose-y-adriana";
 
-
-setTimeout(()=>{
-
-document.getElementById("overlay").style.display="none";
-
-window.location.href="https://www.invitartedesigns.com/save-the-date-jose-y-adriana";
-
-},1200);
-
+    },1200);
 
 });
